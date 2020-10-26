@@ -4,7 +4,7 @@ import { ChatWindow } from "./Components/ChatWindow";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Sidebar />
       <ChatWindow />
     </div>

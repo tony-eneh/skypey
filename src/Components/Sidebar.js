@@ -1,8 +1,9 @@
 import { Contact } from "./Contact";
+import "./Sidebar.css";
 
 export const Sidebar = () => {
   return (
-    <aside className="side-bar">
+    <aside className="sidebar">
       <Contact />
       <Contact />
       <Contact />
