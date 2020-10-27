@@ -1,0 +1,38 @@
+.contact {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+.contact:hover {
+  background-color: #444;
+  border-radius: 10px;
+}
+
+.contact__img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.contact__details {
+  padding-left: 1rem;
+  /* hide the details by default for small screens */
+  display: none;
+}
+
+.contact__details p {
+  margin: 0;
+}
+
+.contact__details-name {
+  font-size: normal;
+  font-weight: bold;
+}
+
+@media (min-width: 500px) {
+  .contact__details {
+    display: block;
+  }
+}

@@ -20,7 +20,7 @@
   scrollbar-width: none; /* Firefox */
 }
 
-@media (min-width: 576px) {
+@media (min-width: 500px) {
   .sidebar {
     flex-basis: 250px;
   }
