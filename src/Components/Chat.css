@@ -1,0 +1,16 @@
+.chat {
+  background-color: #115481;
+  color: silver;
+  font-size: small;
+  font-weight: 200;
+  padding: 0.2rem 0.4rem;
+  margin-top: 1rem;
+  border-radius: 10px 10px 10px 0;
+  max-width: 70%;
+}
+
+.chat[data-user-message] {
+  align-self: flex-end;
+  background-color: #272727;
+  border-radius: 10px 10px 0 10px;
+}

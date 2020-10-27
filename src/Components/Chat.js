@@ -1,3 +1,9 @@
-export const Chat = () => {
-  return <span className="chat">Hello Niggi</span>;
+import "./Chat.css";
+
+export const Chat = (props) => {
+  return (
+    <span className="chat" {...props}>
+      Hello Niggi
+    </span>
+  );
 };
