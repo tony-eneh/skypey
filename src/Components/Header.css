@@ -3,9 +3,8 @@
   grid-template-areas: "img name" "img status";
   padding: 0.2rem 0.5rem;
   font-size: small;
-  color: rgb(200, 200, 200);
-  background: rgb(0, 0, 0);
-  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(1, 99, 119) 100%);
+  /* color: rgb(200, 200, 200); */
+  background-color: #444444;
 }
 
 .header * {
