@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-right: 1px solid #444444;
+  border-right: 1px solid black;
   overflow-y: scroll;
   padding: 1rem;
   transition: flex 0.5s;

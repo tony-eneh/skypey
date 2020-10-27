@@ -3,8 +3,8 @@
   grid-template-areas: "img name" "img status";
   padding: 0.2rem 0.5rem;
   font-size: small;
-  /* color: rgb(200, 200, 200); */
   background-color: #444444;
+  border-bottom: 1px solid black;
 }
 
 .header * {
