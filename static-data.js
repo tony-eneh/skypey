@@ -6,7 +6,7 @@ const faker = require("faker"); // faker is used for generating random fake data
 const DateGenerator = require("random-date-generator");
 
 // just an example of how the state object is structured
-const state = {
+export const state = {
   users: generateUsers(randomNumber(2, 15)),
   chats: [], // empty array. To be filled in just below shortly
   typing: "",
@@ -30,7 +30,7 @@ console.log("members of first chat", state.chats[0].members);
 /**
  * @returns {Object} - a new user object
  */
-function generateUser() {
+export function generateUser() {
   return {
     name: faker.name.findName(),
     email: faker.internet.email(),
@@ -60,16 +60,16 @@ function generateChat({ userId }) {
  * @param {Function} generateUser - function that generates a single user
  * @returns {Array} - an array of user objects with length n = numberOfUsers
  */
-function generateUsers(numberOfUsers) {
+export function generateUsers(numberOfUsers) {
   return Array.from({ length: numberOfUsers }, () => generateUser());
 }
 
-function generateChats(users) {
+export function generateChats(users) {
   // for each contact generate a chat with that contact
   return Array.from(users, generateChat);
 }
 
-function randomNumber(min, max) {
+export function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
