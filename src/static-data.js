@@ -84,7 +84,7 @@ function generateMessage(chat) {
   // console.log("value of this inside generateMessage map function", chat);
   return {
     messageId: shortid.generate(),
-    sender: chat.members[randomNumber(0, 1)], // randomly choose the sender between the two chat members
+    sender: chat.members[randomNumber(0, 2)], // randomly choose the sender between the two chat members. The second item in my randomizing function is not inclusive. It uses Math.floor in the definition
     text: txtgen.sentence(),
     date: DateGenerator.getRandomDateInRange(startDate, endDate), // random date in range
   };

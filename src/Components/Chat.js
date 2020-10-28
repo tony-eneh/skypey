@@ -1,10 +1,13 @@
 import "./Chat.css";
 
-export const Chat = (props) => {
+export const Chat = ({ chat, ...props }) => {
+  const { text, date } = chat;
   return (
     <span className="chat" {...props}>
-      <span className="chat__text">Hello Niggi</span>
-      <span className="chat__time">03:15pm</span>
+      <span className="chat__text">{text}</span>
+      <span className="chat__time">
+        {date.getHours()}:{date.getMinutes()}
+      </span>
     </span>
   );
 };
