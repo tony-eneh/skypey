@@ -1,0 +1,19 @@
+.message-input {
+  flex: 0 0 3rem;
+  /* center the contained input element */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333333;
+  border-top: 1px solid black;
+}
+
+.message-input input {
+  border-radius: 10px;
+  border: solid black 1px;
+  outline: none;
+  padding: 0.2rem 1rem;
+  width: 80%;
+  background-color: #555555;
+  color: #eeeeee;
+}

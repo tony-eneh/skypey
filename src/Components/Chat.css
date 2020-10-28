@@ -1,0 +1,26 @@
+.chat__text {
+  padding: 0.2rem 0.4rem;
+  margin-top: 1rem;
+  border-radius: 10px 10px 10px 0;
+  max-width: 70%;
+  background-color: #115481;
+  color: silver;
+  font-size: small;
+  font-weight: 200;
+}
+
+.chat__time {
+  display: block;
+  font-size: x-small;
+}
+
+.chat[data-user-message] {
+  align-self: flex-end;
+  /* text-align is for the chat__time to align to the right */
+  text-align: right;
+}
+
+.chat[data-user-message] .chat__text {
+  background-color: #272727;
+  border-radius: 10px 10px 0 10px;
+}

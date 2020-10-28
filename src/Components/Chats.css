@@ -1,0 +1,9 @@
+.chats {
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #555555;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex: 1 0 auto;
+}
