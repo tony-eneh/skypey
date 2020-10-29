@@ -6,11 +6,13 @@ import { store } from "../store";
 // Chats in my UI represents the discussion (chat) with one of my contacts. Hence a Chat in my UI is actually a message in the redux store
 
 export const Chats = () => {
-  // just pick the first chat as the desired chat and read its messages
-  // TODO: the current chat will be maintained by the store
-  const messages = store.getState().chats[0].messages;
-  const activeUser = store.getState().activeUser;
-  console.log("chat members", store.getState().chats[0].members);
+  const state = store.getState();
+  const currentChat = state.chats.find(
+    (chat) => chat.chatId === state.currentChatId
+  );
+  const messages = currentChat.messages;
+  const activeUser = state.activeUser;
+  console.log("chat members", currentChat.members);
   console.log("messages", messages);
   return (
     <div className="chats">
