@@ -105,3 +105,8 @@ export function getChats() {
 export function getActiveUser() {
   return state.activeUser;
 }
+
+export function getCurrentChatId() {
+  state.currentChatId = state.chats[0].chatId;
+  return state.currentChatId;
+}
