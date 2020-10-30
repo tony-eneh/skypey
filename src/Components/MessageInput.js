@@ -30,7 +30,7 @@ export const MessageInput = () => {
 
   return (
     <form className="message-input" onSubmit={handleSubmit}>
-      <input ref={inputRef} />
+      <input ref={inputRef} placeholder="type a message here..." />
     </form>
   );
 };
