@@ -6,7 +6,8 @@ export const Chat = ({ chat, ...props }) => {
     <span className="chat" {...props}>
       <span className="chat__text">{text}</span>
       <span className="chat__time">
-        {date.getHours()}:{date.getMinutes()}
+        {/* parse the date string to object before extracting the hours and minutes */}
+        {new Date(date).getHours()}:{new Date(date).getMinutes()}
       </span>
     </span>
   );

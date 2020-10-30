@@ -2,9 +2,15 @@ import "./Header.css";
 import { store } from "../store";
 
 export const Header = () => {
-  // header area currently displays details of active user which can be deceiving
-  // TODO: use header to display info of current chat partner or group chat info(for group chats)
-  const { name, profilePic, status } = store.getState().activeUser;
+  const state = store.getState();
+  console.log("state from inside Header", state);
+  const currentChat = state.chats.find(
+    (chat) => chat.chatId === state.currentChatId
+  );
+  const chatPartnerId = currentChat.members[0];
+  const chatPartner = state.users.find((user) => user.userId === chatPartnerId);
+
+  const { name, profilePic, status } = chatPartner;
   return (
     <header className="header">
       <img className="header__img" src={profilePic} alt={name} />

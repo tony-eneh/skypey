@@ -6,7 +6,7 @@ const faker = require("faker"); // faker is used for generating random fake data
 const DateGenerator = require("random-date-generator");
 
 // just an example of how the state object is structured
-export const state = {
+const state = {
   users: generateUsers(randomNumber(2, 15)),
   chats: [], // empty array. To be filled in just below shortly
   typing: "",
@@ -30,7 +30,7 @@ console.log("members of first chat", state.chats[0].members);
 /**
  * @returns {Object} - a new user object
  */
-export function generateUser() {
+function generateUser() {
   return {
     name: faker.name.findName(),
     email: faker.internet.email(),
@@ -60,16 +60,16 @@ function generateChat({ userId }) {
  * @param {Function} generateUser - function that generates a single user
  * @returns {Array} - an array of user objects with length n = numberOfUsers
  */
-export function generateUsers(numberOfUsers) {
+function generateUsers(numberOfUsers) {
   return Array.from({ length: numberOfUsers }, () => generateUser());
 }
 
-export function generateChats(users) {
+function generateChats(users) {
   // for each contact generate a chat with that contact
   return Array.from(users, generateChat);
 }
 
-export function randomNumber(min, max) {
+function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -86,6 +86,27 @@ function generateMessage(chat) {
     messageId: shortid.generate(),
     sender: chat.members[randomNumber(0, 2)], // randomly choose the sender between the two chat members. The second item in my randomizing function is not inclusive. It uses Math.floor in the definition
     text: txtgen.sentence(),
-    date: DateGenerator.getRandomDateInRange(startDate, endDate), // random date in range
+    date: DateGenerator.getRandomDateInRange(startDate, endDate).toUTCString(), // random date in range
   };
+}
+
+export function getUsers() {
+  // utilize my demo state object written in the upper part of this file to keep track of users
+  state.users = generateUsers(randomNumber(5, 40));
+  return state.users;
+}
+
+export function getChats() {
+  state.activeUser = generateUser();
+  state.chats = generateChats(state.users);
+  return state.chats;
+}
+
+export function getActiveUser() {
+  return state.activeUser;
+}
+
+export function getCurrentChatId() {
+  state.currentChatId = state.chats[0].chatId;
+  return state.currentChatId;
 }
