@@ -7,7 +7,11 @@ html {
 }
 
 .app {
+  /* fallback property for mobile devices which don't support css variables */
   height: 100vh;
+  /* the css variable --vh100 is set by javascript. See the useEffect hook in App.js  */
+  /* setting by javascript is to fix the bug of disappearance of lower part on initial load */
+  height: var(--vh100, 100vh);
   display: flex;
   background-color: dimgray;
   overflow-y: hidden;
