@@ -6,6 +6,7 @@
   height: 1px;
   flex-grow: 1;
   overflow-y: auto;
+  align-items: flex-start;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
